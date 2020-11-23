@@ -1,0 +1,26 @@
+
+	ReactNative
+
+		install
+
+		asks "push notification" permission
+
+-----------------------------------------------------------
+
+	My Firebase Token Is: {{$firebaseToken}}
+
+	<form action="/push-me-this" method="get">
+		Push yourself a message!
+		[_________________]
+		[Send]
+	</form>
+
+===========================================================
+
+Open app
+See a login screen
+Log in
+"Hello, Tigran S! Your session key is: ....."
+    : store sessionKey somewhere on device?
+Log out -> send sessionKey...
+-> login screen.
