@@ -75,10 +75,36 @@ app.get('/log-out', ({query}, res) => {
   }
 });
 
-app.post('/geo-ping', ({body}) => {
-  console.log(body)
+app.post('/geo-ping', ({body, query}, res) => {
+  const sessionKey = query.sessionKey;
+  if (!sessionKey) {
+    console.log('No session for geo ping');
+    res.send({ success: false });
+  }
+  const username = sessions[sessionKey];
+  if (!username) {
+    console.log(`No user found with username: ${username}`);
+    res.send({ success: false });
+  }
+  // const user = users[username];
+  console.log(username);
+  console.log(body);
+  res.send({ success: true });
 });
 
-app.post('/health-kit-ping', ({body}) => {
-  console.log(body)
+app.post('/health-kit-ping', ({body, query}, res) => {
+  const sessionKey = query.sessionKey;
+  if (!sessionKey) {
+    console.log('No session for health ping');
+    res.send({ success: false });
+  }
+  const username = sessions[sessionKey];
+  if (!username) {
+    console.log(`No user found with username: ${username}`);
+    res.send({ success: false });
+  }
+  // const user = users[username];
+  console.log(username);
+  console.log(body);
+  res.send({ success: true });
 });
