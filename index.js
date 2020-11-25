@@ -75,3 +75,10 @@ app.get('/log-out', ({query}, res) => {
   }
 });
 
+app.post('/geo-ping', ({body}) => {
+  console.log(body)
+});
+
+app.post('/health-kit-ping', ({body}) => {
+  console.log(body)
+});
